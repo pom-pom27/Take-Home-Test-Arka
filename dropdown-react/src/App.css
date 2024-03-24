@@ -1,0 +1,128 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  gap: 40px;
+  justify-content: center;
+  flex: 1;
+}
+
+.custom-select {
+  position: relative;
+  width: 400px;
+  max-width: 100%;
+  font-size: 1.15rem;
+  color: #000;
+  margin-top: 3rem;
+}
+
+.select-button {
+  width: 100%;
+  font-size: 1.15rem;
+  background-color: green;
+  padding: 0.675em 1em;
+  border-radius: 0.25rem;
+  cursor: pointer;
+
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.selected-value {
+  text-align: left;
+}
+
+.arrow {
+  border-left: 5px solid transparent;
+  border-right: 5px solid transparent;
+  border-top: 6px solid white;
+  transition: transform ease-in-out 0.3s;
+}
+.color-green {
+  background-color: green;
+}
+.color-red {
+  background-color: red;
+}
+
+.select-dropdown {
+  z-index: 99999;
+  position: absolute;
+  list-style: none;
+  width: 100%;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  background-color: #fff;
+  border: 1px solid #caced1;
+  border-radius: 4px;
+  padding: 10px;
+  margin-top: 10px;
+  max-height: 200px;
+  overflow-y: auto;
+  transition: 0.5s ease;
+  user-select: none;
+  -webkit-user-select: none;
+
+  transform: scaleY(0);
+  opacity: 0;
+  visibility: hidden;
+}
+
+.select-dropdown li {
+  position: relative;
+  cursor: pointer;
+  display: flex;
+  gap: 1rem;
+  align-items: center;
+  user-select: none;
+  -webkit-user-select: none;
+}
+
+.select-dropdown li label {
+  width: 100%;
+  padding: 8px 10px;
+  cursor: pointer;
+}
+
+.select-dropdown input:focus ~ label {
+  background-color: #dfdfdf;
+}
+
+.select-dropdown input[type="radio"] {
+  position: absolute;
+  left: 0;
+  opacity: 0;
+}
+
+.custom-select.active .arrow {
+  transform: rotate(180deg);
+}
+
+.custom-select.active .select-dropdown {
+  opacity: 1;
+  visibility: visible;
+  transform: scaleY(1);
+}
+
+@media screen and (max-width: 840px) {
+  .container {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .custom-select {
+    width: 100%;
+    max-width: 340px;
+  }
+
+  .select-button {
+    width: 100%;
+    min-width: 200px;
+  }
+}

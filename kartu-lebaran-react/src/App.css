@@ -1,0 +1,49 @@
+#root {
+  max-width: 1280px;
+  margin: 0 auto;
+  min-height: 100vh;
+  display: flex;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex: 1;
+}
+
+.ketupat {
+  display: flex;
+  width: 160px;
+  margin: 60px;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2px;
+
+  /* rotate */
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
+  -moz-transform: rotate(-45deg);
+  -o-transform: rotate(-45deg);
+}
+
+.ketupat-item {
+  padding: 10px;
+  width: 50px;
+  height: 50px;
+  background-color: green;
+}
+
+.ketupat-item:nth-child(odd) {
+  background-color: greenyellow;
+}
+
+.text {
+  font-weight: 600;
+  font-size: 20px;
+  text-transform: capitalize;
+  display: flex;
+  align-items: center;
+  flex-direction: column;
+}
